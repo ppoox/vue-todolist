@@ -1,18 +1,18 @@
 <template>
-    <div class="clearAllContainer">
-        <span class="clearAllBtn" v-on:click="clearTodo">Clear All</span>
-    </div>
+  <div class="clearAllContainer">
+    <span class="clearAllBtn" v-on:click="clearTodo">Clear All</span>
+  </div>
 </template>
 
 <script>
 export default {
-    props: ['clearEvent'],
-    methods: {
-        clearTodo() {
-            this.$emit('clearEvent');
-        }
+  props: ["clearEvent"],
+  methods: {
+    clearTodo() {
+      this.$emit("clearEvent");
     }
-}
+  }
+};
 </script>
 
 <style scoped>

@@ -1,32 +1,30 @@
 <template>
-    <div>
-        <!--ul>li*3 -->
-        <ul>
-            <li v-for="(todoItem, index) in todoArray" v-bind:key="todoItem.item" class="shadow">
-                <i class="fas fa-check checkBtn" 
-                    v-bind:class="{checkBtnCompleted: todoItem.completed}" 
-                    v-on:click="toggleComplete(todoItem,index)"></i>
-                <span v-bind:class="{textCompleted: todoItem.completed}">{{todoItem.item}}</span>
-                <span class="removeBtn" v-on:click="removeTodo(todoItem, index)">
-                    <i class="fas fa-trash-alt"></i>
-                </span>
-            </li>
-        </ul>
-    </div>
+  <div>
+    <!--ul>li*3 -->
+    <ul>
+      <li v-for="(todoItem, index) in todoArray" v-bind:key="todoItem.item" class="shadow">
+        <i class="fas fa-check checkBtn" v-bind:class="{ checkBtnCompleted: todoItem.completed }" v-on:click="toggleComplete(todoItem, index)"></i>
+        <span v-bind:class="{ textCompleted: todoItem.completed }">{{ todoItem.item }}</span>
+        <span class="removeBtn" v-on:click="removeTodo(todoItem, index)">
+          <i class="fas fa-trash-alt"></i>
+        </span>
+      </li>
+    </ul>
+  </div>
 </template>
 
 <script>
 export default {
-    props: ['todoArray', 'removeEvent', 'toggleEvent'],
-    methods: {
-        removeTodo(todoItem, index) {
-            this.$emit('removeEvent', todoItem, index);
-        },
-        toggleComplete(todoItem, index) {
-            this.$emit('toggleEvent', todoItem, index);
-        }
+  props: ["todoArray", "removeEvent", "toggleEvent"],
+  methods: {
+    removeTodo(todoItem, index) {
+      this.$emit("removeEvent", todoItem, index);
     },
-}
+    toggleComplete(todoItem, index) {
+      this.$emit("toggleEvent", todoItem, index);
+    }
+  }
+};
 </script>
 
 <style scoped>
