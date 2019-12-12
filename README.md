@@ -1,8 +1,10 @@
 # vue-todo
 
-## master branch : basic todo list
+## 1. master branch : basic todo list     
 
-## vuex-axios brach : used vuex and axios
+
+## 2. vuex-axios brach : used vuex and axios     
+
 
 ## Project setup
 
